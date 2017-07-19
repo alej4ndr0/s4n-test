@@ -1,0 +1,11 @@
+{
+    "name": "prueba-s4n",
+    "description": "prueba técnica - desarrollador frontend",
+    "dependencies": {
+        "angular": "1.5.x",
+        "jquery": "2.1.1",
+        "bootstrap": "3.3.x",
+        "angular-route": "1.5.x",
+        "angular-cookies": "1.5.x"
+    }
+}

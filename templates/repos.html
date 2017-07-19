@@ -1,0 +1,35 @@
+<div class="pull-right col-md-3">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="buscar..." aria-describedby="buscar-repo" ng-model="textoBusqueda" ng-minlength="3" search-repo>
+        <span class="input-group-addon" id="buscar-repo"><span class=" glyphicon glyphicon-search"></span></span>
+    </div>
+</div>
+<div class="clearfix"></div>
+<nav ng-if="paginas">
+  <ul class="pagination">
+    <li class="{{pag == pagina ? 'active' : ''}}" ng-repeat="pag in paginas">
+        <a href="" ng-click="irPagina(pag)">{{pag}}</a>
+    </li>
+  </ul>
+</nav>
+<table class="table">
+    <thead>
+        <tr>
+            <th ng-repeat="c in columnas">
+                <a ng-click="ordenar(c.columna)" href="">
+                    <span>{{c.titulo}}</span>
+                    <span ng-if="c.columna == orden" class="glyphicon {{ordenReverse[orden] === true ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-top'}}"></span>
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items | orderBy: orden : ordenReverse[orden]">
+            <td>{{item.lenguaje}}</td>
+            <td>{{item.branch}}</td>
+            <td>{{item.url}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.descripcion}}</td>
+        </tr>
+    </tbody>
+</table>
